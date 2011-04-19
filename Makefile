@@ -1,4 +1,4 @@
-CC = gcc -std=c99 -g
+CC = gcc -std=c99 -g -Wall
 CFILES = vector.c gravity.c main.c 
 HFILES = vector.h gravity.h
 OUT = cgravity
