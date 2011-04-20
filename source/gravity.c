@@ -50,7 +50,8 @@ void step_simulation(Simulation *sim)
 		Body *body = &sim->bodies[i];
 		Vector *accel = &accelerations[i];
 		Vector newVelocity = vec_add(body->velocity, vec_mul(*accel, t));
-		Vector displacement = vec_mul(vec_add(body->velocity, newVelocity), t / 2);
+		Vector displacement = vec_mul(vec_add(
+				body->velocity, newVelocity), t / 2);
 		body->position = vec_add(body->position, displacement);
 		body->velocity = newVelocity;
 	}
