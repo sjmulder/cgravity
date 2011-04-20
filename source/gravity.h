@@ -28,6 +28,6 @@ typedef struct {
 
 void seed_bodies(World *world, Body *bodies);
 Vector gravitational_acceleration(float g, Body *body, Body *other);
-void step(Simulation *sim);
+void step_simulation(Simulation *sim);
 
 #endif
