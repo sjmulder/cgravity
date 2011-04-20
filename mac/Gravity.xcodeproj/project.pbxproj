@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		360038F6135E490200790C45 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360038F5135E490200790C45 /* Cocoa.framework */; };
+		36003900135E490200790C45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 360038FE135E490200790C45 /* InfoPlist.strings */; };
+		36003903135E490200790C45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36003902135E490200790C45 /* main.m */; };
+		36003909135E490300790C45 /* GravityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36003908135E490300790C45 /* GravityAppDelegate.m */; };
+		3600390C135E490300790C45 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3600390A135E490300790C45 /* MainMenu.xib */; };
+		36003920135E49D800790C45 /* gravity.c in Sources */ = {isa = PBXBuildFile; fileRef = 3600391C135E49D700790C45 /* gravity.c */; };
+		36003921135E49D800790C45 /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 3600391E135E49D700790C45 /* vector.c */; };
+		36003926135E4CBC00790C45 /* GravityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36003925135E4CBC00790C45 /* GravityView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		360038F1135E490200790C45 /* Gravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		360038F5135E490200790C45 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		360038F8135E490200790C45 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		360038F9135E490200790C45 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		360038FA135E490200790C45 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		360038FD135E490200790C45 /* Gravity-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Gravity-Info.plist"; sourceTree = "<group>"; };
+		360038FF135E490200790C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36003901135E490200790C45 /* Gravity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gravity-Prefix.pch"; sourceTree = "<group>"; };
+		36003902135E490200790C45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36003907135E490300790C45 /* GravityAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GravityAppDelegate.h; sourceTree = "<group>"; };
+		36003908135E490300790C45 /* GravityAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravityAppDelegate.m; sourceTree = "<group>"; };
+		3600390B135E490300790C45 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3600391C135E49D700790C45 /* gravity.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gravity.c; sourceTree = "<group>"; };
+		3600391D135E49D700790C45 /* gravity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gravity.h; sourceTree = "<group>"; };
+		3600391E135E49D700790C45 /* vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vector.c; sourceTree = "<group>"; };
+		3600391F135E49D700790C45 /* vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		36003924135E4CBC00790C45 /* GravityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityView.h; sourceTree = "<group>"; };
+		36003925135E4CBC00790C45 /* GravityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		360038EE135E490200790C45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				360038F6135E490200790C45 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		360038E6135E490200790C45 = {
+			isa = PBXGroup;
+			children = (
+				3600391B135E498200790C45 /* Source */,
+				360038FB135E490200790C45 /* Mac */,
+				360038F4135E490200790C45 /* Frameworks */,
+				360038F2135E490200790C45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		360038F2135E490200790C45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				360038F1135E490200790C45 /* Gravity.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		360038F4135E490200790C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				360038F5135E490200790C45 /* Cocoa.framework */,
+				360038F7135E490200790C45 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		360038F7135E490200790C45 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				360038F8135E490200790C45 /* AppKit.framework */,
+				360038F9135E490200790C45 /* CoreData.framework */,
+				360038FA135E490200790C45 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		360038FB135E490200790C45 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				36003907135E490300790C45 /* GravityAppDelegate.h */,
+				36003908135E490300790C45 /* GravityAppDelegate.m */,
+				36003924135E4CBC00790C45 /* GravityView.h */,
+				36003925135E4CBC00790C45 /* GravityView.m */,
+				3600390A135E490300790C45 /* MainMenu.xib */,
+				360038FC135E490200790C45 /* Supporting Files */,
+			);
+			name = Mac;
+			path = Gravity;
+			sourceTree = "<group>";
+		};
+		360038FC135E490200790C45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36003901135E490200790C45 /* Gravity-Prefix.pch */,
+				36003902135E490200790C45 /* main.m */,
+				360038FE135E490200790C45 /* InfoPlist.strings */,
+				360038FD135E490200790C45 /* Gravity-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3600391B135E498200790C45 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3600391F135E49D700790C45 /* vector.h */,
+				3600391E135E49D700790C45 /* vector.c */,
+				3600391D135E49D700790C45 /* gravity.h */,
+				3600391C135E49D700790C45 /* gravity.c */,
+			);
+			name = Source;
+			path = ../source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		360038F0135E490200790C45 /* Gravity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3600390F135E490300790C45 /* Build configuration list for PBXNativeTarget "Gravity" */;
+			buildPhases = (
+				360038ED135E490200790C45 /* Sources */,
+				360038EE135E490200790C45 /* Frameworks */,
+				360038EF135E490200790C45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gravity;
+			productName = Gravity;
+			productReference = 360038F1135E490200790C45 /* Gravity.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		360038E8135E490200790C45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Hyzkia;
+			};
+			buildConfigurationList = 360038EB135E490200790C45 /* Build configuration list for PBXProject "Gravity" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 360038E6135E490200790C45;
+			productRefGroup = 360038F2135E490200790C45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				360038F0135E490200790C45 /* Gravity */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		360038EF135E490200790C45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36003900135E490200790C45 /* InfoPlist.strings in Resources */,
+				3600390C135E490300790C45 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		360038ED135E490200790C45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36003903135E490200790C45 /* main.m in Sources */,
+				36003909135E490300790C45 /* GravityAppDelegate.m in Sources */,
+				36003920135E49D800790C45 /* gravity.c in Sources */,
+				36003921135E49D800790C45 /* vector.c in Sources */,
+				36003926135E4CBC00790C45 /* GravityView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		360038FE135E490200790C45 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				360038FF135E490200790C45 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3600390A135E490300790C45 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3600390B135E490300790C45 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3600390D135E490300790C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3600390E135E490300790C45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		36003910135E490300790C45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				INFOPLIST_FILE = "Gravity/Gravity-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36003911135E490300790C45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Gravity/Gravity-Prefix.pch";
+				INFOPLIST_FILE = "Gravity/Gravity-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		360038EB135E490200790C45 /* Build configuration list for PBXProject "Gravity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3600390D135E490300790C45 /* Debug */,
+				3600390E135E490300790C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3600390F135E490300790C45 /* Build configuration list for PBXNativeTarget "Gravity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36003910135E490300790C45 /* Debug */,
+				36003911135E490300790C45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 360038E8135E490200790C45 /* Project object */;
+}
