@@ -3,6 +3,8 @@
 
 @implementation GravityAppDelegate
 
+@synthesize fps;
+
 - (void)freeSimulation {
 	gravityView.simulation = NULL;
 	
@@ -12,6 +14,8 @@
 }
 
 - (void)setupSimulation {
+	[self willChangeValueForKey:@"numBodies"];
+	
 	World *world = malloc(sizeof(World));
 	world->numBodies = 500;
 	world->worldSize.x = 800;
@@ -20,7 +24,6 @@
 	world->spawnAreaSize.y = 500;
 	world->gravity = 3.0f;
 	world->bodyMass = 3.0f;
-	world->step = 30;
 	world->wrap = false;
 	
 	Body *bodies = malloc(sizeof(Body) * world->numBodies);
@@ -32,11 +35,67 @@
 	
 	gravityView.simulation = simulation;
 	[gravityView setNeedsDisplay:YES];
+
+	[self didChangeValueForKey:@"numBodies"];
+}
+
+- (void)resetFrameCount {
+	[self willChangeValueForKey:@"fps"];
+
+	frameCount = 0;
+	fps = 0;
+	timeSinceLastFrame = 0;
+	
+	[frameCountStart release];
+	[lastFrameTime release];
+	
+	[self didChangeValueForKey:@"fps"];
+}
+
+- (void)countFrame {
+	frameCount++;
+	
+	NSDate *time = [NSDate date];
+	
+	if (frameCountStart) {
+		NSTimeInterval timeSinceStart = [time timeIntervalSinceDate:frameCountStart];
+		if (timeSinceStart >= 1.0f) {
+			[self willChangeValueForKey:@"fps"];
+			fps = frameCount;
+			[self didChangeValueForKey:@"fps"];
+			
+			frameCount = 0;
+			[frameCountStart release];
+			frameCountStart = [time retain];
+		}
+	} else {
+		frameCountStart = [time retain];
+	}
+	
+	if (lastFrameTime) {
+		timeSinceLastFrame = [time timeIntervalSinceDate:lastFrameTime];
+	} else {
+		timeSinceLastFrame = 0;
+	}
+	
+	[lastFrameTime release];
+	lastFrameTime = [time retain];
+}
+
+- (void)stepThrough:(NSTimeInterval)time {
+	step_simulation(simulation, time);
+	[gravityView setNeedsDisplay:YES];
+}
+
+- (void)doTimedStep:(id)sender {
+	[self countFrame];
+	[self stepThrough:timeSinceLastFrame];
 }
 
 - (void)dealloc {
 	[self freeSimulation];
 	[self pause:self];
+	[self resetFrameCount];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -61,13 +120,22 @@
 	return timer != NULL;
 }
 
+- (int)numBodies {
+	if (simulation) {
+		return simulation->world->numBodies;
+	} else {
+		return 0;
+	}
+}
+
 - (IBAction)play:(id)sender {
 	if (self.isPlaying) {
 		return;
 	}
 	
-	NSTimeInterval timerInterval = 1 / simulation->world->step;
-	timer = [[NSTimer timerWithTimeInterval:timerInterval target:self selector:@selector(doStep:) userInfo:nil repeats:YES] retain];
+	[self resetFrameCount];
+	
+	timer = [[NSTimer timerWithTimeInterval:0 target:self selector:@selector(doTimedStep:) userInfo:nil repeats:YES] retain];
 	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSEventTrackingRunLoopMode];
 }
@@ -76,6 +144,8 @@
 	[timer invalidate];
 	[timer release];
 	timer = NULL;
+	
+	[self resetFrameCount];
 }
 
 - (IBAction)togglePause:(id)sender {
@@ -89,12 +159,11 @@
 - (IBAction)resetSimlation:(id)sender {
 	[self freeSimulation];
 	[self setupSimulation];
+	[self resetFrameCount];
 }
 
 - (IBAction)doStep:(id)sender {
-	step_simulation(simulation);
-	[gravityView setNeedsDisplay:YES];
+	[self stepThrough:STEP_SIZE];
 }
-
 
 @end

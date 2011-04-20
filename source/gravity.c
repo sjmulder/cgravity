@@ -26,9 +26,8 @@ Vector gravitational_acceleration(float g, Body *body, Body *other)
 	return vec_mul(r, g * (body->mass + other->mass) / r2);
 }
 
-void step_simulation(Simulation *sim)
+void step_simulation(Simulation *sim, float dt)
 {
-	float t = 1 / sim->world->step;
 	float g = sim->world->gravity;
 	int numBodies = sim->world->numBodies;
 
@@ -49,9 +48,9 @@ void step_simulation(Simulation *sim)
 	for (int i = 0; i < numBodies; i++) {
 		Body *body = &sim->bodies[i];
 		Vector *accel = &accelerations[i];
-		Vector newVelocity = vec_add(body->velocity, vec_mul(*accel, t));
+		Vector newVelocity = vec_add(body->velocity, vec_mul(*accel, dt));
 		Vector displacement = vec_mul(vec_add(
-				body->velocity, newVelocity), t / 2);
+				body->velocity, newVelocity), dt / 2);
 		body->position = vec_add(body->position, displacement);
 		body->velocity = newVelocity;
 	}

@@ -10,7 +10,6 @@ typedef struct {
 	Vector spawnAreaSize;
 	float gravity;
 	float bodyMass;
-	float step;
 	bool wrap;	
 } World;
 
@@ -28,6 +27,6 @@ typedef struct {
 
 void seed_bodies(World *world, Body *bodies);
 Vector gravitational_acceleration(float g, Body *body, Body *other);
-void step_simulation(Simulation *sim);
+void step_simulation(Simulation *sim, float dt);
 
 #endif
