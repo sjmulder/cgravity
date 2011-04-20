@@ -13,7 +13,7 @@
 
 - (void)setupSimulation {
 	World *world = malloc(sizeof(World));
-	world->numBodies = 1500;
+	world->numBodies = 500;
 	world->worldSize.x = 800;
 	world->worldSize.y = 500;
 	world->spawnAreaSize.x = 800;
