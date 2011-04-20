@@ -92,7 +92,7 @@
 }
 
 - (IBAction)doStep:(id)sender {
-	step(simulation);
+	step_simulation(simulation);
 	[gravityView setNeedsDisplay:YES];
 }
 

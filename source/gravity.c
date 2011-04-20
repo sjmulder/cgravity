@@ -26,7 +26,7 @@ Vector gravitational_acceleration(float g, Body *body, Body *other)
 	return vec_mul(r, g * (body->mass + other->mass) / r2);
 }
 
-void step(Simulation *sim)
+void step_simulation(Simulation *sim)
 {
 	float t = 1 / sim->world->step;
 	float g = sim->world->gravity;
